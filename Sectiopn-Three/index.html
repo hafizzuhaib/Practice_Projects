@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Friendly</title>
+</head>
+<body>
+    <div id="app">React has not Render Yer</div>
+
+
+    <script type="text/babel" >
+        
+       // Friendly complex Component
+       function Friendly(){
+           var friendlyStyle = {
+               height: 300,
+               width:200,
+               padding:0,
+               backgroundColor:"#FFFF",
+               webkitfilter: "drop-shadow(0px 0px 50px #555)",
+               filter: "drop-shadow(0px 0px 50px #555)"
+           }
+           return (
+               <div style={friendlyStyle}>
+                <Avatar/>
+                <UserName/>
+               <GetConnected/>
+                </div>
+           );
+       }
+    
+       function Avatar(){
+           var avatarStyle = {
+               marginLeft: 20,
+               marginTop: 20,
+               height:150,
+               width: 150,
+               borderRadius: "50%"
+            }
+           return(
+            <img style = {avatarStyle} src={('https://media-exp1.licdn.com/dms/image/C4E03AQGPyEV-fUfesg/profile-displayphoto-shrink_200_200/0/1624281711834?e=1629936000&v=beta&t=-ceuZO0XNxNRT4SxjTmnEHhjAGo1rcux15wlWu3VvkM')} alt = 'profile pic' />
+           );
+       }
+       function UserName(){
+           var nameStyle = {
+              fontSize: 24,
+              fontFamily: "Apple Chancery, cursive",
+              margin: 20,
+              
+           }
+           return(
+               <h1 style={nameStyle}> Hafiz Zuhaib </h1>
+           )
+       }
+        function GetConnected(){
+            return(
+                <div>
+                <Like/>
+                <Share/>
+                <Add/>
+            </div>
+            )
+        }
+        var iconStyle = {
+            margin:22
+        }
+        function Like(){
+            return(
+                <i className="fa fa-thumbs-up" aria-hidden="true" style = {iconStyle}></i>
+            )
+        }
+        function Share(){
+            return(
+            
+             <i className="fa fa-share" aria-hidden="true" style = {iconStyle}></i>
+            )
+        }
+        function Add(){
+            return(
+                <i className="fa fa-users" aria-hidden="true" style = {iconStyle}></i>
+            )
+        }
+        ReactDOM.render(
+            <Friendly/>,
+            document.getElementById("app")
+        );
+
+    </script>
+    
+</body>
+</html>
